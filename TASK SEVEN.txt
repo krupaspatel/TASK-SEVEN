@@ -1,0 +1,126 @@
+TASK SEVEN CLASSES AND OBJECTS
+
+1) import math
+numbers = input("Provide D: ")
+numbers = numbers.split(',')
+result_list = []
+for D in numbers:
+    	Q = round(math.sqrt(2 * 50 * int(D) / 30))
+    	result_list.append(Q)
+print(result_list)
+
+
+2) 
+
+class Shape(object):
+    def __init__(self):
+        pass
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self, l):
+        Shape.__init__(self)
+        self.length = l
+    def area(self):
+        return self.length*self.length
+
+	aSquare= Square(3)
+	print aSquare.area()
+
+3) class py_solution
+ def threeSum(self, nums):
+        nums, result, i = sorted(nums), [], 0
+        while i < len(nums) - 2:
+            j, k = i + 1, len(nums) - 1
+            while j < k:
+        if nums[i] + nums[j] + nums[k] < 0:
+                    j += 1
+        
+elif nums[i] + nums[j] + nums[k] > 0:
+                    k -= 1
+                else:
+                    result.append([nums[i], nums[j], nums[k]])
+                    j, k = j + 1, k - 1
+                    while j < k and nums[j] == nums[j - 1]:
+                        j += 1
+                    while j < k and nums[k] == nums[k + 1]:
+                       k -= 1
+            i += 1
+            while i < len(nums) - 2 and nums[i] == nums[i - 1]:
+                i += 1
+        return result
+
+
+print(py_solution().threeSum([-25, -10, -7, -3, 2, 4, 8, 10]))
+
+
+
+4) class Time():
+  def _init_(self, hours, mins):
+  self.hours = hours
+  self.mins = mins
+
+  def addTime(t1, t2):
+    t3 = Time(0,0)
+    if t1.mins+t2.mins > 60:
+      t3.hours = (t1.mins+t2.mins) / 60
+    t3.hours = t3.hours+t1.hours+t2.hours
+    t3.mins = (t1.mins+t2.mins)-(((t1.mins+t2.mins)/ 60) * 60)
+    return t3
+
+  def displayTime(self):
+    print("Time is",self.hours,"hours and",self.mins,"minutes.")
+  def displayMinute(self):
+    print((self.hours*60)+self.mins)
+	a = Time(2,50)
+	b = Time(1,20)
+	c = Time.addTime(a,b)
+	c.displayTime()
+	c.displayMinute()
+
+5) 
+import java.util.*;
+
+	public class Person {
+   	 private int age; 
+  
+	 public Person(int initialAge) 
+ {
+    this.age=initialAge;
+ }
+ public void amIOld() {
+          if(age<=0){
+              age=0;
+              System.out.println("Age is not valid, setting age to 0.");
+              System.out.println("You are young."); }
+          else if(age<13){
+            System.out.println("You are young."); }
+          else if(age>=13 && age<18){
+              System.out.println("You are a teenager."); }
+          else{
+        System.out.println("You are old."); }  }
+ public void yearPasses()
+ {
+    // Increment this person's age.
+        age=age+1;
+ }
+ public static void main(String[] args) 
+ {
+  Scanner sc = new Scanner(System.in); // reader
+  int T = sc.nextInt();
+  for (int i = 0; i < T; i++) {
+   int age = sc.nextInt();
+   Person p = new Person(age);
+   p.amIOld();
+   for (int j = 0; j < 3; j++)
+ {
+    p.yearPasses();
+   }
+   p.amIOld();
+   System.out.println();
+        }
+  sc.close();
+    }
+}
+
